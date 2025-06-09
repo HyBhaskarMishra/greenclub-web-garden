@@ -120,6 +120,22 @@
     border-color: var(--accent-green);
 }
 
+.team-card h3 {
+    color: var(--text-primary);
+}
+
+.team-card p {
+    color: var(--text-secondary);
+}
+
+.team-card h4 {
+    color: var(--text-primary);
+}
+
+.team-card ul li {
+    color: var(--text-muted);
+}
+
 .team-icon {
     width: 4rem;
     height: 4rem;
