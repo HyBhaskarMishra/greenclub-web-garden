@@ -27,7 +27,37 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize rating system
     initRatingSystem();
+    
+    // Fix navigation links
+    initNavigation();
 });
+
+// Navigation functionality
+function initNavigation() {
+    // Add active class to current page
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+    
+    // Ensure all navigation links work properly
+    document.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('http')) {
+            link.addEventListener('click', function(e) {
+                // Allow normal navigation to work
+                console.log('Navigating to:', href);
+            });
+        }
+    });
+}
 
 // Animation functions
 function initAnimations() {
@@ -50,11 +80,19 @@ function initAnimations() {
     });
 }
 
-// Carbon footprint chart
+// Carbon footprint chart - Enhanced interactive version
 function initCarbonChart() {
-    const ctx = document.getElementById('carbonChart').getContext('2d');
+    const ctx = document.getElementById('carbonChart');
+    if (!ctx) return;
     
-    new Chart(ctx, {
+    const chartCtx = ctx.getContext('2d');
+    
+    // Create gradient
+    const gradient = chartCtx.createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(0, 'rgba(16, 185, 129, 0.3)');
+    gradient.addColorStop(1, 'rgba(16, 185, 129, 0.05)');
+    
+    new Chart(chartCtx, {
         type: 'line',
         data: {
             labels: ['2020', '2021', '2022', '2023', '2024'],
@@ -62,22 +100,65 @@ function initCarbonChart() {
                 label: 'Carbon Footprint Reduction (%)',
                 data: [0, 15, 28, 35, 42],
                 borderColor: '#10b981',
-                backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                backgroundColor: gradient,
                 borderWidth: 3,
                 fill: true,
                 tension: 0.4,
                 pointBackgroundColor: '#10b981',
                 pointBorderColor: '#ffffff',
-                pointBorderWidth: 2,
-                pointRadius: 6
+                pointBorderWidth: 3,
+                pointRadius: 8,
+                pointHoverRadius: 12,
+                pointHoverBackgroundColor: '#059669',
+                pointHoverBorderColor: '#ffffff',
+                pointHoverBorderWidth: 3
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            interaction: {
+                intersect: false,
+                mode: 'index'
+            },
             plugins: {
                 legend: {
-                    display: false
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        color: '#374151',
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        }
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    titleColor: '#ffffff',
+                    bodyColor: '#ffffff',
+                    borderColor: '#10b981',
+                    borderWidth: 2,
+                    cornerRadius: 8,
+                    displayColors: false,
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            return 'Year: ' + tooltipItems[0].label;
+                        },
+                        label: function(context) {
+                            return 'Reduction: ' + context.parsed.y + '%';
+                        },
+                        afterLabel: function(context) {
+                            const achievements = {
+                                0: 'Club established',
+                                15: 'First green initiatives',
+                                28: 'Major recycling program',
+                                35: 'Solar panel installation',
+                                42: 'Campus-wide sustainability'
+                            };
+                            return achievements[context.parsed.y] || '';
+                        }
+                    }
                 }
             },
             scales: {
@@ -87,21 +168,62 @@ function initCarbonChart() {
                     ticks: {
                         callback: function(value) {
                             return value + '%';
+                        },
+                        color: '#6b7280',
+                        font: {
+                            size: 12
                         }
                     },
                     grid: {
-                        color: '#f3f4f6'
+                        color: '#e5e7eb',
+                        lineWidth: 1
+                    },
+                    title: {
+                        display: true,
+                        text: 'Carbon Footprint Reduction',
+                        color: '#374151',
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        }
                     }
                 },
                 x: {
+                    ticks: {
+                        color: '#6b7280',
+                        font: {
+                            size: 12
+                        }
+                    },
                     grid: {
-                        color: '#f3f4f6'
+                        color: '#e5e7eb',
+                        lineWidth: 1
+                    },
+                    title: {
+                        display: true,
+                        text: 'Year',
+                        color: '#374151',
+                        font: {
+                            size: 14,
+                            weight: 'bold'
+                        }
                     }
                 }
             },
             elements: {
                 point: {
-                    hoverRadius: 8
+                    hoverRadius: 12
+                }
+            },
+            onHover: (event, activeElements) => {
+                event.native.target.style.cursor = activeElements.length > 0 ? 'pointer' : 'default';
+            },
+            onClick: (event, activeElements) => {
+                if (activeElements.length > 0) {
+                    const dataIndex = activeElements[0].index;
+                    const year = ['2020', '2021', '2022', '2023', '2024'][dataIndex];
+                    const value = [0, 15, 28, 35, 42][dataIndex];
+                    alert(`Year ${year}: ${value}% carbon footprint reduction achieved!`);
                 }
             }
         }
