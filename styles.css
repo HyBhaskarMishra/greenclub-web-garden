@@ -1,7 +1,7 @@
-/* Custom styles for GreenClub website */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* Font family */
+
 .font-inter {
     font-family: 'Inter', sans-serif;
 }
@@ -19,7 +19,6 @@
     --border-color: #475569;
 }
 
-/* Dark background gradients */
 .bg-dark-gradient {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
 }
@@ -29,7 +28,7 @@
     border: 1px solid var(--border-color);
 }
 
-/* Navigation styles */
+
 .nav-link {
     color: var(--text-secondary);
     text-decoration: none;
@@ -50,7 +49,7 @@
     font-weight: 600;
 }
 
-/* Button styles */
+
 .btn-primary {
     background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-green-dark) 100%);
     color: white;
@@ -87,7 +86,7 @@
     color: white;
 }
 
-/* Card styles */
+
 .card {
     background: var(--bg-card);
     border-radius: 1rem;
@@ -102,7 +101,6 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Team card styles */
 .team-card {
     background: var(--bg-card);
     border-radius: 1rem;
@@ -146,7 +144,7 @@
     margin: 0 auto 1rem;
 }
 
-/* Social card styles */
+
 .social-card {
     background: var(--bg-card);
     border-radius: 1rem;
@@ -163,7 +161,6 @@
     border-color: var(--accent-green);
 }
 
-/* Timeline styles */
 .timeline-item {
     position: relative;
     padding-left: 2rem;
@@ -196,7 +193,6 @@
     display: none;
 }
 
-/* Work card styles */
 .work-card {
     background: var(--bg-card);
     border-radius: 1rem;
@@ -211,7 +207,6 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Achievement stat styles */
 .achievement-stat {
     text-align: center;
     background: var(--bg-card);
@@ -221,7 +216,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Form styles */
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -253,7 +247,6 @@
     box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
 }
 
-/* Rating stars */
 .rating-stars {
     display: flex;
     gap: 0.25rem;
@@ -288,13 +281,11 @@
     animation: fade-in 0.6s ease-out;
 }
 
-/* Mobile menu */
 .mobile-menu {
     background: var(--bg-secondary);
     border-top: 1px solid var(--border-color);
 }
 
-/* Chart container */
 .chart-container {
     background: var(--bg-card);
     border-radius: 1rem;
@@ -303,7 +294,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Custom scrollbar for dark theme */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -319,51 +309,4 @@
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-green);
-}
-
-/* Thank you message */
-.thank-you-overlay {
-    background: rgba(15, 23, 42, 0.9);
-}
-
-.thank-you-content {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
-
-/* Contact card styles */
-.contact-card {
-    background: var(--bg-card);
-    border-radius: 1rem;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.contact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
-    border-color: var(--accent-green);
-}
-
-.contact-card h3 {
-    color: var(--text-primary);
-}
-
-.contact-card p {
-    color: var(--text-secondary);
-}
-
-.contact-icon {
-    width: 4rem;
-    height: 4rem;
-    background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-green-dark) 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
 }

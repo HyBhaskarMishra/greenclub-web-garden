@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="font-inter bg-slate-900 text-slate-100">
-    <!-- Navigation -->
+   
     <nav class="fixed top-0 left-0 right-0 bg-slate-800/90 backdrop-blur-md shadow-lg z-50 border-b border-slate-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -20,8 +20,7 @@
                         </div>
                     </div>
                     <div class="ml-3">
-                        <h1 class="text-xl font-bold text-slate-100">GreenClub</h1>
-                        <p class="text-xs text-slate-300">MNNIT Allahabad</p>
+                        logo
                     </div>
                 </div>
                 <div class="hidden md:block">
@@ -51,7 +50,7 @@
         </div>
     </nav>
 
-    <!-- Header -->
+  <!-- YAHA SE APNA KAAM START KARNA  -->
     <section class="pt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-dark-gradient">
         <div class="max-w-4xl mx-auto text-center">
             <h1 class="text-4xl md:text-6xl font-bold text-slate-100 mb-6">
@@ -63,101 +62,8 @@
         </div>
     </section>
 
-    <!-- Feedback Form -->
-    <section class="py-16 bg-slate-800">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-slate-700 rounded-3xl p-8 md:p-12 border border-slate-600">
-                <form class="space-y-8" id="feedbackForm">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="form-group">
-                            <label for="firstName" class="block text-sm font-semibold text-slate-100 mb-2">First Name *</label>
-                            <input type="text" id="firstName" name="firstName" required 
-                                   class="w-full px-4 py-3 rounded-xl border border-slate-600 bg-slate-800 text-slate-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all">
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName" class="block text-sm font-semibold text-slate-100 mb-2">Last Name *</label>
-                            <input type="text" id="lastName" name="lastName" required 
-                                   class="w-full px-4 py-3 rounded-xl border border-slate-600 bg-slate-800 text-slate-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all">
-                        </div>
-                    </div>
 
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="form-group">
-                            <label for="email" class="block text-sm font-semibold text-slate-100 mb-2">Email Address *</label>
-                            <input type="email" id="email" name="email" required 
-                                   class="w-full px-4 py-3 rounded-xl border border-slate-600 bg-slate-800 text-slate-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all">
-                        </div>
-                        <div class="form-group">
-                            <label for="role" class="block text-sm font-semibold text-slate-100 mb-2">You are a *</label>
-                            <select id="role" name="role" required 
-                                    class="w-full px-4 py-3 rounded-xl border border-slate-600 bg-slate-800 text-slate-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all">
-                                <option value="">Select your role</option>
-                                <option value="student">MNNIT Student</option>
-                                <option value="member">GreenClub Member</option>
-                                <option value="faculty">Faculty</option>
-                                <option value="alumni">Alumni</option>
-                                <option value="visitor">Visitor</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="category" class="block text-sm font-semibold text-slate-100 mb-2">Feedback Category *</label>
-                        <select id="category" name="category" required 
-                                class="w-full px-4 py-3 rounded-xl border border-slate-600 bg-slate-800 text-slate-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all">
-                            <option value="">Select category</option>
-                            <option value="general">General Feedback</option>
-                            <option value="events">Events & Activities</option>
-                            <option value="website">Website Experience</option>
-                            <option value="suggestions">Suggestions for Improvement</option>
-                            <option value="collaboration">Collaboration Opportunities</option>
-                            <option value="complaint">Complaint</option>
-                            <option value="appreciation">Appreciation</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="rating" class="block text-sm font-semibold text-slate-100 mb-2">Overall Rating *</label>
-                        <div class="rating-stars flex space-x-2">
-                            <input type="radio" id="star5" name="rating" value="5" class="hidden">
-                            <label for="star5" class="star cursor-pointer text-3xl text-gray-300 hover:text-yellow-400 transition-colors">⭐</label>
-                            <input type="radio" id="star4" name="rating" value="4" class="hidden">
-                            <label for="star4" class="star cursor-pointer text-3xl text-gray-300 hover:text-yellow-400 transition-colors">⭐</label>
-                            <input type="radio" id="star3" name="rating" value="3" class="hidden">
-                            <label for="star3" class="star cursor-pointer text-3xl text-gray-300 hover:text-yellow-400 transition-colors">⭐</label>
-                            <input type="radio" id="star2" name="rating" value="2" class="hidden">
-                            <label for="star2" class="star cursor-pointer text-3xl text-gray-300 hover:text-yellow-400 transition-colors">⭐</label>
-                            <input type="radio" id="star1" name="rating" value="1" class="hidden">
-                            <label for="star1" class="star cursor-pointer text-3xl text-gray-300 hover:text-yellow-400 transition-colors">⭐</label>
-                        </div>
-                        <p class="text-sm text-slate-300 mt-2">Click to rate your experience</p>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message" class="block text-sm font-semibold text-slate-100 mb-2">Your Message *</label>
-                        <textarea id="message" name="message" rows="6" required 
-                                  placeholder="Share your thoughts, suggestions, or feedback here..."
-                                  class="w-full px-4 py-3 rounded-xl border border-slate-600 bg-slate-800 text-slate-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all resize-none"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="flex items-center text-slate-300">
-                            <input type="checkbox" id="subscribe" name="subscribe" class="rounded text-green-600 focus:ring-green-500">
-                            <span class="ml-3 text-sm text-slate-300">I'd like to receive updates about GreenClub activities</span>
-                        </label>
-                    </div>
-
-                    <div class="text-center">
-                        <button type="submit" class="btn-primary px-12 py-4 text-lg">
-                            Submit Feedback
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Info -->
+    <!-- Yaha pe emai yt wagera add kar dena, Cards me hi karna jaise home page pe hai -->
     <section class="py-16 bg-slate-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -166,98 +72,12 @@
                 </h2>
                 <p class="text-lg text-slate-300">We're always here to listen and help</p>
             </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <span class="text-3xl">📧</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-100 mb-2">Email Us</h3>
-                    <p class="text-slate-300 mb-4">Send us a detailed message</p>
-                    <a href="mailto:greenclub@mnnit.ac.in" class="text-green-400 font-semibold hover:text-green-300">
-                        greenclub@mnnit.ac.in
-                    </a>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <span class="text-3xl">🏫</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-100 mb-2">Visit Us</h3>
-                    <p class="text-slate-300 mb-4">Drop by our office on campus</p>
-                    <p class="text-green-400 font-semibold">
-                        Student Activity Center<br>
-                        MNNIT Allahabad
-                    </p>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <span class="text-3xl">💬</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-100 mb-2">Chat With Us</h3>
-                    <p class="text-slate-300 mb-4">Join our WhatsApp group</p>
-                    <a href="#" class="text-green-400 font-semibold hover:text-green-300">
-                        Join WhatsApp Group
-                    </a>
-                </div>
-            </div>
+           
         </div>
     </section>
 
-    <!-- Thank You Message (Hidden) -->
-    <div id="thankYouMessage" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-        <div class="bg-slate-800 rounded-2xl p-8 max-w-md mx-4 text-center border border-slate-600">
-            <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span class="text-green-400 text-2xl">✓</span>
-            </div>
-            <h3 class="text-2xl font-bold text-slate-100 mb-4">Thank You!</h3>
-            <p class="text-slate-300 mb-6">Your feedback has been submitted successfully. We appreciate your input and will get back to you soon.</p>
-            <button onclick="closeThankYouMessage()" class="btn-primary">
-                Close
-            </button>
-        </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mr-3">
-                            <span class="text-white font-bold">GC</span>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-slate-100">GreenClub</h3>
-                            <p class="text-sm text-slate-300">MNNIT Allahabad</p>
-                        </div>
-                    </div>
-                    <p class="text-slate-300">Building a sustainable future, one initiative at a time.</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-slate-300 hover:text-slate-100">Home</a></li>
-                        <li><a href="recruitment.html" class="text-slate-300 hover:text-slate-100">Recruitment</a></li>
-                        <li><a href="socials.html" class="text-slate-300 hover:text-slate-100">Socials</a></li>
-                        <li><a href="feedback.html" class="text-slate-300 hover:text-slate-100">Feedback</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
-                    <ul class="space-y-2 text-slate-300">
-                        <li>MNNIT Allahabad</li>
-                        <li>Teliarganj, Prayagraj</li>
-                        <li>greenclub@mnnit.ac.in</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-slate-700 mt-8 pt-8 text-center">
-                <p class="text-slate-300">&copy; 2024 GreenClub MNNIT. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+   
 
     <script src="script.js"></script>
 </body>
